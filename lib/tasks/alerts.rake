@@ -6,7 +6,7 @@ namespace :alerts do
   desc 'Check for state employee alerts'
   task check: :environment do
     notifier = Slack::Notifier.new ENV["SLACK_WEBHOOK_URL"]
-    page = Nokogiri::HTML(open('https://www.mass.gov/alerts/winter-weather-alerts'))
+    page = Nokogiri::HTML(open('https://www.mass.gov/alerts'))
     alert_count = page.css('h2.ma__comp-heading').count - 1
     for i in 0..alert_count
       # page.css('h2.ma__comp-heading')[i].text
