@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'slack-notifier'
-require 'pry-byebug'
 
 namespace :alerts do
   desc 'Check for state employee alerts'
